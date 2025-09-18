@@ -27,9 +27,12 @@
 		}
 		.sidebar h2 {
 			<script>
-			function logout() {
-				location.reload();
-			}
+function logout() {
+    if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+        window.location.href = '/logout';
+    }
+}
+
 			// جميع الأقسام الديناميكية (لوحة التحكم، الأصول، المستخدمون، المباني، العقود، التقارير، المهام ...)
 			const sections = {
 					dashboard: `
