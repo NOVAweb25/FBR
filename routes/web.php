@@ -29,6 +29,9 @@ Route::get('/register', function() {
 });
 Route::post('/register', [AuthController::class, 'register']);
 
+Route::get('/logout', [AuthController::class, 'logout']);
+
+
 Route::get('/login', function() {
     return view('login'); // Blade file
 });
