@@ -48,9 +48,15 @@ class AuthController extends Controller
     }
 
     // تسجيل الخروج
-    public function logout(Request $request)
+     public function logout(Request $request)
     {
-        $request->session()->forget('user_id');
-        return redirect('/login')->with('success', 'تم تسجيل الخروج.');
+        // مسح التوكن أو المعرف من الجلسة
+        session()->forget('user_id'); 
+       
+        // session()->flush(); 
+
+        // إعادة توجيه إلى صفحة الدخول
+        return redirect('/login');
     }
+
 }
